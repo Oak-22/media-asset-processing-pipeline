@@ -1,0 +1,114 @@
+# Stage 0 SD-card ingest and offload configuration.
+#
+# Vision labels below are VNClassifyImageRequest identifiers. They only
+# rank suggestions; the operator confirms the category in a dialog.
+
+[volumes]
+ssd_volume_uuid = "41EDE73C-2DEE-4742-90E4-DB6774C5F065"
+ssd_display_name = "Samsung SSD"
+photo_root = "JB Photography"
+inbox_folder = "_Inbox"
+# Optional absolute path; otherwise PATH, /opt/homebrew/bin, /usr/local/bin.
+exiftool_path = ""
+
+[state]
+state_dir = "~/.jbphoto-offload"
+manifest_dir = "outputs/stage0/offloads"
+
+[segmentation]
+gap_hours = 3.0
+split_on_date_change = true
+
+[classification]
+sample_size = 12
+# Share of total category evidence the top candidate needs to skip the
+# category dialog. Categories in always_ask_categories are always asked.
+auto_accept_confidence = 0.6
+min_evidence = 0.25
+# Mean per-label confidence below this is treated as noise.
+label_floor = 0.15
+people_category = "People"
+# Weight applied to the share of sampled frames with a face or human.
+# Below 1.0 so bystanders (crowds, drivers) do not outrank strong object
+# labels; true portraits also score on the people/adult labels.
+people_signal_weight = 0.6
+always_ask_categories = ["People"]
+reverse_geocode = true
+geocode_timeout_seconds = 10
+
+[taxonomy]
+max_depth = 6
+
+[taxonomy.label_map]
+Animals = [
+  "animal", "mammal", "canine", "dog", "feline", "cat", "bird", "horse",
+  "equestrian", "raptor", "insect", "reptile", "fish", "zoo",
+]
+Architecture = [
+  "building", "structure", "skyscraper", "cityscape", "arch", "bridge",
+  "castle", "dome", "tower", "clock_tower", "belltower", "stained_glass",
+  "stairs", "ruins",
+]
+Automotive = [
+  "automobile", "car", "vehicle", "sportscar", "motorsport", "nascar",
+  "formula_one_car", "grand_prix", "motorcycle", "motocross", "suv", "jeep",
+  "convertible", "tire", "wheel", "go_kart", "dashboard",
+]
+Culinary = [
+  "food", "dessert", "drink", "meat", "fruit", "vegetable", "baked_goods",
+  "cake", "seafood", "tableware", "plate", "cocktail", "coffee", "restaurant",
+]
+Landscape = [
+  "mountain", "lake", "forest", "sunset_sunrise", "ocean", "beach",
+  "waterfall", "canyon", "cliff", "desert", "hill", "river", "shore",
+  "water_body", "night_sky", "aurora", "snow", "glacier", "wetland",
+]
+People = [
+  "people", "adult", "child", "baby", "teen", "bride", "groom", "wedding",
+  "wedding_dress", "bridesmaid", "crowd", "graduation", "ceremony",
+  "celebration", "dancing", "concert", "singer",
+]
+"Real Estate" = [
+  "interior_room", "living_room", "kitchen", "kitchen_room", "bedroom",
+  "bathroom", "bathroom_room", "dining_room", "house_single", "domicile",
+  "patio", "porch", "apartment", "balcony", "fireplace", "jacuzzi", "pool",
+]
+Sports = [
+  "sport", "athletics", "basketball", "football", "soccer", "baseball",
+  "stadium", "arena", "tennis", "volleyball", "golf", "surfing", "skiing",
+  "skateboarding", "boxing", "rugby", "hockey",
+]
+Travel = [
+  "monument", "statue", "museum", "harbour", "airport", "cruise_ship",
+  "amusement_park", "street", "storefront",
+]
+
+[dialogs]
+title = "SD Offload"
+# Text dialogs give up (and route the shoot to the inbox) after this long.
+timeout_seconds = 1800
+
+[dialogs.questions]
+category = "Shoot {shoot_id}: {file_count} files, {time_range}.\nSuggested categories are ranked by on-device labels. Which category?"
+category_all = "Shoot {shoot_id}: choose a category."
+people_branch = "Shoot {shoot_id}: is this a personal or client shoot?"
+subcategory = "Shoot {shoot_id}: choose a folder inside {path}"
+new_folder = "New folder name inside {path}:"
+shoot_folder = "Shoot {shoot_id}: where should it go inside {path}?"
+subject = "Client or subject name:"
+client = "Client name:"
+session = "Session name (the year {year} is added automatically):"
+descriptor = "Descriptor (optional), e.g. Wedding, Modeling:"
+location = "Location (optional):"
+confirm = "Destination inside {photo_root}/ (edit if needed):"
+merge = "{path} already exists. Merge shoot {shoot_id} into it?"
+
+[dialogs.options]
+other_category = "Other…"
+file_here = "✓ File here"
+new_folder = "New folder…"
+new_shoot = "New shoot: Subject – Descriptor – Location"
+new_client_session = "New client folder: Client / Session Year"
+existing_prefix = "Existing: "
+merge = "Merge"
+inbox = "Send to Inbox"

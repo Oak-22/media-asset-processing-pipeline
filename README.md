@@ -61,6 +61,10 @@ The workflow addresses that problem through five documented stages:
 4. ML-Readiness Handoff
 5. Operational Serving Exports
 
+An upstream Stage 0 (SD Card Ingest and Offload) gets each shoot off the
+camera card and into the SSD folder taxonomy with hash-verified copies
+before Stage 1 import begins.
+
 Each stage isolates a specific class of transformations, defines clear
 inputs and outputs, and introduces validation boundaries before later
 operations are applied. The result is a workflow that is more
@@ -104,6 +108,32 @@ design themes are:
 > Open [docs/terminology.md](docs/terminology.md) in a separate tab
 > before reading the stage writeups if you want the later diagrams and
 > handoff language to make sense on first pass.
+
+<br>
+
+### Stage 0 – SD Card Ingest and Offload
+
+Offloads camera cards into the SSD photo taxonomy before Lightroom
+import.
+
+Location: [Stage 0](pipeline_stages/000_sd-ingest-offload/README.md)
+
+Focus areas:
+- capture-time shoot segmentation and SHA-256-verified copies that
+  never modify the card
+- on-device Apple Vision labels as ranked category suggestions, not facts
+- short macOS dialogs for what cannot be inferred, such as client name
+  and personal vs client work
+- an offload ledger so a reinserted card is a no-op, plus a per-run
+  manifest
+
+> **Boundary:** Stage 0 offloads and files capture data. Vision
+> suggestions are confirmed by the operator; Lightroom import, legacy
+> folder cleanup, and card formatting stay out of scope.
+>
+> **Handoff state:** Stage 1 receives each shoot as a hash-verified
+> `Photo/RAW` (and `Video/RAW`) folder in the SSD taxonomy with a
+> manifest tying every file back to the card.
 
 <br>
 
@@ -248,10 +278,13 @@ stages, extracting state, validating transitions, preserving lineage, and
 packaging outputs for ML-readiness and operational serving.
 
 ```text
-Stage 1 ─── Stage 2 ─── Stage 3 ─── Stage 4 ─── Stage 5
-   ╲          ╲          ╲          ╲          ╲
-    └──── Cross-Stage Evidence and Control Layer ────┘
+Stage 0 ─── Stage 1 ─── Stage 2 ─── Stage 3 ─── Stage 4 ─── Stage 5
+              ╲          ╲          ╲          ╲          ╲
+               └──── Cross-Stage Evidence and Control Layer ────┘
 ```
+
+Stage 0 sits upstream of the Lightroom stages: it offloads capture data
+onto the SSD and records its own hash manifest before Stage 1 import.
 
 1. **Workflow System Design and Operation** — Stages 1–3 document the
    Lightroom-centered workflow, its transformation boundaries, manual review
@@ -294,17 +327,19 @@ Use this path if you want a condensed, high-level view of the project:
 1. [README](README.md)
 2. [Shared terminology](docs/terminology.md)
 3. [Batchability Cost Model](docs/batchability-cost-model.md)
-4. [Stage 1](pipeline_stages/001_metadata-foundation-and-query/README.md):
+4. [Stage 0](pipeline_stages/000_sd-ingest-offload/README.md):
+   scan the flow and the automated-vs-asked table
+5. [Stage 1](pipeline_stages/001_metadata-foundation-and-query/README.md):
    scan governing principles and read the nearby demonstration text
-5. [Stage 2](pipeline_stages/002_baseline-conditioning/README.md):
+6. [Stage 2](pipeline_stages/002_baseline-conditioning/README.md):
    scan governing principles and read the nearby demonstration text
-6. [Stage 3](pipeline_stages/003_ai-semantic-mask-definition-propagation/README.md):
+7. [Stage 3](pipeline_stages/003_ai-semantic-mask-definition-propagation/README.md):
    scan governing principles and read the nearby demonstration text
-7. [Stage 4](pipeline_stages/004_ml-readiness-handoff/README.md)
-8. [Stage 5](pipeline_stages/005_operational-serving-exports/README.md)
-9. [Scripts](scripts/python/README.md), [Outputs](outputs/README.md),
-   and [Tests](tests/README.md)
-10. [Terraform](infra/terraform/aws-centralized-assets/README.md)
+8. [Stage 4](pipeline_stages/004_ml-readiness-handoff/README.md)
+9. [Stage 5](pipeline_stages/005_operational-serving-exports/README.md)
+10. [Scripts](scripts/python/README.md), [Outputs](outputs/README.md),
+    and [Tests](tests/README.md)
+11. [Terraform](infra/terraform/aws-centralized-assets/README.md)
 
 ### Extensive Path (30 mins)
 
@@ -316,22 +351,24 @@ implementation rationale, and downstream operational context:
 3. [Product Requirements](docs/product-requirements.md)
 4. [Pipeline Overview Diagram](docs/diagrams/source/media-asset-processing-pipeline-overview-diagram.drawio)
 5. [Batchability Cost Model](docs/batchability-cost-model.md)
-6. [Stage 1](pipeline_stages/001_metadata-foundation-and-query/README.md):
+6. [Stage 0](pipeline_stages/000_sd-ingest-offload/README.md):
+   read the problem, governing principles, and boundary
+7. [Stage 1](pipeline_stages/001_metadata-foundation-and-query/README.md):
    read the problem, governing principles, implementation, and takeaway
-7. [Stage 2](pipeline_stages/002_baseline-conditioning/README.md):
+8. [Stage 2](pipeline_stages/002_baseline-conditioning/README.md):
    read the problem, governing principles, implementation, validation,
    and takeaway
-8. [Stage 3](pipeline_stages/003_ai-semantic-mask-definition-propagation/README.md):
+9. [Stage 3](pipeline_stages/003_ai-semantic-mask-definition-propagation/README.md):
    read the problem, governing principles, qualification flow,
    validation examples, and takeaway
-9. [Stage 4](pipeline_stages/004_ml-readiness-handoff/README.md)
-10. [Stage 5](pipeline_stages/005_operational-serving-exports/README.md)
-11. [Scripts](scripts/python/README.md), [Outputs](outputs/README.md),
+10. [Stage 4](pipeline_stages/004_ml-readiness-handoff/README.md)
+11. [Stage 5](pipeline_stages/005_operational-serving-exports/README.md)
+12. [Scripts](scripts/python/README.md), [Outputs](outputs/README.md),
     and [Tests](tests/README.md)
-12. [Terraform](infra/terraform/aws-centralized-assets/README.md)
-13. [Cloud Loader Contract](docs/cloud/stage5-loader-contract.md)
-14. [Architecture Decision Records](docs/adr)
-15. [Future Work](docs/future-work)
+13. [Terraform](infra/terraform/aws-centralized-assets/README.md)
+14. [Cloud Loader Contract](docs/cloud/stage5-loader-contract.md)
+15. [Architecture Decision Records](docs/adr)
+16. [Future Work](docs/future-work)
 
 <br>
 
@@ -344,3 +381,7 @@ intended engineering rules.
 
 See the [Agent Instruction-Output Alignment Gap](docs/case-studies/agent-instruction-output-alignment-gap.md)
 case study for one documented example.
+
+
+
+https://cal.com/team/standout/15-chat-tomas

@@ -20,6 +20,20 @@ In the project’s broader evidence model, tests protect the structured
 proof layer: extraction logic, schema assumptions, manifests, handoff
 contracts, and serving outputs remain reproducible as the system grows.
 
+Current contents:
+
+- `stage0/`: stdlib `unittest` coverage for Stage 0 shoot segmentation,
+  taxonomy reading, folder naming, label-to-category scoring with a fake
+  Vision analyzer, the dialog questionnaire with a scripted backend, and
+  copy, hash verification, ledger, and collision handling in temporary
+  directories
+
+Run all tests from the repository root:
+
+```bash
+python3 -m unittest discover tests
+```
+
 Likely future contents include:
 
 - fixture XMP sidecars
