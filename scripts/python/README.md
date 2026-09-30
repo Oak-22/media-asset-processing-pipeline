@@ -57,6 +57,22 @@ scripts/python/
 ├── common/
 │   ├── __init__.py
 │   └── io_utils.py
+├── stage0/
+│   ├── __init__.py
+│   ├── 01_run_sd_offload.py
+│   ├── 02_build_stage0_manifest.py
+│   ├── classify.py
+│   ├── config.py
+│   ├── dialogs.py
+│   ├── inventory.py
+│   ├── taxonomy.py
+│   ├── transfer.py
+│   ├── volumes.py
+│   ├── requirements.txt
+│   ├── config/
+│   │   └── stage0_offload.toml
+│   └── launchd/
+│       └── com.jbphoto.sd-offload.plist
 ├── stage1/
 │   ├── __init__.py
 │   ├── 01_verify_stage1_xmp_source_pairs.py
@@ -76,13 +92,17 @@ scripts/python/
 │   ├── 03_create_stage3_review_sheet.py
 │   ├── 04_ingest_stage3_review_results.py
 │   └── 05_build_stage3_manifest.py
-└── stage4/
+├── stage4/
+│   ├── __init__.py
+│   ├── 01_extract_pixel_signal_metrics.py
+│   ├── 02_build_feature_inventory.py
+│   ├── 03_build_dataset_readiness_report.py
+│   ├── 04_build_ml_handoff_contract.py
+│   └── 05_build_stage4_manifest.py
+└── stage5/
     ├── __init__.py
-    ├── 01_extract_pixel_signal_metrics.py
-    ├── 02_build_feature_inventory.py
-    ├── 03_build_dataset_readiness_report.py
-    ├── 04_build_ml_handoff_contract.py
-    └── 05_build_stage4_manifest.py
+    ├── 01_build_serving_exports.py
+    └── 02_build_stage5_manifest.py
 ```
 
 <br>
@@ -90,6 +110,9 @@ scripts/python/
 ## Intent
 
 - `common/`: shared filesystem and serialization helpers
+- `stage0/`: SD-card inventory, shoot segmentation, on-device category
+  suggestions, operator dialogs, hash-verified offload, and manifest
+  generation
 - `stage1/`: metadata extraction, validation, and manifest generation
 - `stage2/`: develop-setting extraction, parameter auditing, and
   manifest generation
@@ -97,6 +120,7 @@ scripts/python/
   manifest generation
 - `stage4/`: RAW pixel-signal extraction, feature inventory, dataset
   readiness, ML handoff contract, and manifest generation
+- `stage5/`: operational serving exports and manifest generation
 
 These files are CLI entrypoints for producing and validating the
 machine-readable evidence, handoff contracts, and serving exports that
@@ -172,6 +196,8 @@ Outputs include:
 
 Example output locations:
 
+- `outputs/stage0/offloads/<timestamp>_<card-label>.json`
+- `outputs/stage0/stage0_manifest.json`
 - `outputs/stage1/extracted_stage1_metadata.json`
 - `outputs/stage1/stage1_metadata_validation_report.json`
 - `outputs/stage1/stage1_manifest.json`
@@ -186,6 +212,15 @@ Example output locations:
 - `outputs/stage4/stage4_manifest.json`
 - `outputs/stage4/features/`
 - `outputs/stage4/handoff/`
+
+Stage 0 offloads a camera card (dry run first), then indexes the
+per-run manifests:
+
+```bash
+python3 scripts/python/stage0/01_run_sd_offload.py --card /Volumes/Untitled --dry-run
+python3 scripts/python/stage0/01_run_sd_offload.py
+python3 scripts/python/stage0/02_build_stage0_manifest.py
+```
 
 Stage 2 checkpoint manifests can be regenerated with:
 
@@ -271,6 +306,15 @@ The cleanest current strategy is:
 <br>
 
 ## Data Flow
+
+Stage 0 runs once per card insert, upstream of Lightroom:
+
+1. `01_run_sd_offload.py`
+   detects the card and SSD, inventories and segments shoots, suggests
+   categories, runs the dialogs, copies with hash verification, and
+   writes a per-run manifest.
+2. `02_build_stage0_manifest.py`
+   indexes and hashes the per-run manifests.
 
 Stage 1 scripts are numbered because their execution order is part of
 the workflow contract:

@@ -7,6 +7,10 @@ paths, hashes, stage labels, summaries, and per-asset records.
 Read outputs by stage, then by production order:
 
 ```text
+stage0/
+  stage0_manifest.json as the compact review index
+  offloads/ for per-run SD-card offload manifests
+
 stage1/
   source metadata extraction, validation, and manifest
 

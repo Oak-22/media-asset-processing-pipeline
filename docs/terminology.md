@@ -195,6 +195,30 @@ comparisons so natural environmental hue differences are not flattened.
 
 <br>
 
+## Stage 0 Terms
+
+<a id="shoot"></a>
+### Shoot
+
+A run of card files grouped by capture time during Stage 0 offload. A
+new shoot starts after a configured gap between captures (default three
+hours) or when the capture date changes. Each shoot is filed as one
+folder on the SSD and becomes the [dataset](#dataset) that later stages
+work on.
+
+<a id="offload-ledger"></a>
+### Offload Ledger
+
+The append-only JSONL record of every file Stage 0 has offloaded, with
+its destination and SHA-256 hash. The ledger lets a reinserted card be a
+no-op: files already recorded are skipped instead of copied again.
+
+<br>
+
+---
+
+<br>
+
 ## Stage 1 Terms
 
 ### Metadata Architecture
