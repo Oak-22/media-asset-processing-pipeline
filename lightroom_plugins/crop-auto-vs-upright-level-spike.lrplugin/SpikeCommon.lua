@@ -110,12 +110,24 @@ function SpikeCommon.safeRawMetadata(photo, key)
 end
 
 
+-- fileName and copyName are formatted metadata; getRawMetadata returns nil for them.
+local function safeFormattedMetadata(photo, key)
+  local ok, value = LrTasks.pcall(function()
+    return photo:getFormattedMetadata(key)
+  end)
+  if ok and value ~= "" then
+    return value
+  end
+  return nil
+end
+
+
 function SpikeCommon.photoIdentity(photo)
-  local fileName = SpikeCommon.safeRawMetadata(photo, "fileName")
+  local fileName = safeFormattedMetadata(photo, "fileName")
   return {
     asset_key = fileName and LrPathUtils.removeExtension(fileName) or nil,
     file_name = fileName,
-    copy_name = SpikeCommon.safeRawMetadata(photo, "copyName"),
+    copy_name = safeFormattedMetadata(photo, "copyName"),
     uuid = SpikeCommon.safeRawMetadata(photo, "uuid"),
   }
 end

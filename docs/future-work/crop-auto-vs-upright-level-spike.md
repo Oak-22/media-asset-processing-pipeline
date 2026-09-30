@@ -36,7 +36,10 @@ made Upright Level the one plausible scriptable substitute.
 ## Method
 
 Two Virtual Copy branches of the same 20 originals from one event shoot
-were compared:
+were compared, held in Lightroom collections named `Crop Auto` and
+`Upright Level`. The recorded `copy_name` values (`Copy 2`, `Copy 3`)
+are Lightroom's default Virtual Copy names at run time; `Copy 1` is the
+post-cull Picks branch.
 
 ```text
 Upright Level branch (Copy 3)
