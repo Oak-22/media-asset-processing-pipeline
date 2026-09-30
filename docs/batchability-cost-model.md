@@ -13,7 +13,7 @@ pipeline value.
 Here, **issue** follows the shared terminology definition: a recurring
 workflow need that creates manual effort. See [Issue](terminology.md#issue).
 
-The estimates here are directional rather than benchmarked. They model
+The estimates here are benchmarked, with larger effects extrapolated. They model
 how the cost shape changes when a correction operation moves from repeated
 manual execution to setup, qualification where needed, batch
 application, validation, and targeted exception handling.
