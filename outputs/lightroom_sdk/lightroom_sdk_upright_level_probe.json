@@ -1,0 +1,238 @@
+{
+  "spike": "crop_auto_vs_upright_level",
+  "artifact": "upright_level_probe",
+  "status": "complete",
+  "generated_at_utc": "2026-09-30T23:15:46Z",
+  "summary": {
+    "selected_photo_count": 20,
+    "level_rotation_recorded_count": 18,
+    "level_rotation_missing_count": 2
+  },
+  "notes": {
+    "method": "Per photo: apply Transform > Upright Level, read UprightTransform_3 from getDevelopSettings(), convert it to a rotation, then restore the prior Upright mode.",
+    "boundary": "Records Lightroom's Level analysis only. It does not press the Crop tool's Auto button, which the SDK does not expose.",
+    "provenance": "Converted from the spike's first-run CSV output (2026-09-30); values unchanged."
+  },
+  "records": [
+    {
+      "asset_key": "JB105901",
+      "file_name": "JB105901.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "92F6CC63-5C6C-44EB-AFEB-0A52F39D9F61",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": 0.4679,
+      "predicted_crop_angle_degrees": -0.4679,
+      "analysis_wait_seconds": 1.25
+    },
+    {
+      "asset_key": "JB105902",
+      "file_name": "JB105902.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "061DF972-16BE-49CD-8EB0-6AF5404D993D",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": -0.345,
+      "predicted_crop_angle_degrees": 0.345,
+      "analysis_wait_seconds": 1.0
+    },
+    {
+      "asset_key": "JB105903",
+      "file_name": "JB105903.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "A6636AE4-D316-4E21-9E4B-6798095F8FD1",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": -0.8064,
+      "predicted_crop_angle_degrees": 0.8064,
+      "analysis_wait_seconds": 0.75
+    },
+    {
+      "asset_key": "JB105904",
+      "file_name": "JB105904.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "2F8D761E-F82E-4177-AADB-05A051C8ED59",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": 0.5957,
+      "predicted_crop_angle_degrees": -0.5957,
+      "analysis_wait_seconds": 0.5
+    },
+    {
+      "asset_key": "JB105905",
+      "file_name": "JB105905.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "43C257A7-956F-4F93-912F-893A9F4AB94C",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": -0.0775,
+      "predicted_crop_angle_degrees": 0.0775,
+      "analysis_wait_seconds": 0.75
+    },
+    {
+      "asset_key": "JB105907",
+      "file_name": "JB105907.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "AAF5EDE5-2012-4BB8-A31D-9DBC07544498",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": -0.3897,
+      "predicted_crop_angle_degrees": 0.3897,
+      "analysis_wait_seconds": 0.5
+    },
+    {
+      "asset_key": "JB105909",
+      "file_name": "JB105909.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "9BD5D60A-5990-4B5D-8DC3-87CEF5FA3AD6",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": 0.4393,
+      "predicted_crop_angle_degrees": -0.4393,
+      "analysis_wait_seconds": 0.5
+    },
+    {
+      "asset_key": "JB105911",
+      "file_name": "JB105911.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "8BE20CF6-2FE7-47A1-A836-E32CC87AA1E0",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": null,
+      "predicted_crop_angle_degrees": null,
+      "analysis_wait_seconds": 10.0
+    },
+    {
+      "asset_key": "JB105912",
+      "file_name": "JB105912.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "5FA97913-BA98-4166-A1DD-7DBFED2B7D58",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": null,
+      "predicted_crop_angle_degrees": null,
+      "analysis_wait_seconds": 10.0
+    },
+    {
+      "asset_key": "JB105913",
+      "file_name": "JB105913.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "89A9D045-DA54-49D6-A3B1-BB4244EE8A02",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": -0.3417,
+      "predicted_crop_angle_degrees": 0.3417,
+      "analysis_wait_seconds": 7.0
+    },
+    {
+      "asset_key": "JB105915",
+      "file_name": "JB105915.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "C2DC17D8-3662-4428-9D73-A03D66AFB7AB",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": -1.0363,
+      "predicted_crop_angle_degrees": 1.0363,
+      "analysis_wait_seconds": 0.75
+    },
+    {
+      "asset_key": "JB105920",
+      "file_name": "JB105920.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "3F727B19-95D3-4CDF-AAC5-B54E68B476A5",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": 0.5469,
+      "predicted_crop_angle_degrees": -0.5469,
+      "analysis_wait_seconds": 0.5
+    },
+    {
+      "asset_key": "JB105922",
+      "file_name": "JB105922.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "EDA4902B-50AB-49B0-AB60-43108E70A1B9",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": 1.0106,
+      "predicted_crop_angle_degrees": -1.0106,
+      "analysis_wait_seconds": 0.5
+    },
+    {
+      "asset_key": "JB105924",
+      "file_name": "JB105924.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "FA09FDA5-C7F2-4CD9-934F-9FDEB617F7A4",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": 1.3979,
+      "predicted_crop_angle_degrees": -1.3979,
+      "analysis_wait_seconds": 2.5
+    },
+    {
+      "asset_key": "JB105925",
+      "file_name": "JB105925.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "385B8973-7596-42B3-8CEB-5CD1AFE29DF4",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": 1.3553,
+      "predicted_crop_angle_degrees": -1.3553,
+      "analysis_wait_seconds": 0.5
+    },
+    {
+      "asset_key": "JB105927",
+      "file_name": "JB105927.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "FC080423-207C-41C9-A67A-1F51D9725673",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": -0.1461,
+      "predicted_crop_angle_degrees": 0.1461,
+      "analysis_wait_seconds": 0.5
+    },
+    {
+      "asset_key": "JB105928",
+      "file_name": "JB105928.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "B838B516-06E2-46D0-9467-B6C361A7F58D",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": -2.674,
+      "predicted_crop_angle_degrees": 2.674,
+      "analysis_wait_seconds": 1.25
+    },
+    {
+      "asset_key": "JB105929",
+      "file_name": "JB105929.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "5C88515B-824E-45D1-8F91-FB805B01777B",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": -0.5132,
+      "predicted_crop_angle_degrees": 0.5132,
+      "analysis_wait_seconds": 0.5
+    },
+    {
+      "asset_key": "JB105930",
+      "file_name": "JB105930.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "1DE07E79-D637-4924-8D83-E6047DFA9160",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": -0.2477,
+      "predicted_crop_angle_degrees": 0.2477,
+      "analysis_wait_seconds": 0.5
+    },
+    {
+      "asset_key": "JB105931",
+      "file_name": "JB105931.JPG",
+      "copy_name": "Copy 3",
+      "uuid": "109C5E09-7DC1-4AC9-B450-C79F651F0FA0",
+      "prior_perspective_upright": 0,
+      "had_upright_matrices_before": false,
+      "upright_level_rotation_degrees": 1.5069,
+      "predicted_crop_angle_degrees": -1.5069,
+      "analysis_wait_seconds": 0.5
+    }
+  ]
+}

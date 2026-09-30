@@ -587,6 +587,11 @@ straightening result leaves an issue to be corrected later manually (post-pipeli
 reason, Auto Transform belongs in Operation 1 as a reviewed corrective
 cleanup candidate, not as indiscriminate batch application.
 
+See also: [Crop Auto vs Upright Level Spike](../../docs/future-work/crop-auto-vs-upright-level-spike.md)
+for a measured comparison of the Crop tool's `Auto` straighten against
+Transform > Upright Level, and why Crop `Auto` requires GUI automation
+rather than the Lightroom SDK.
+
 ![Auto Transform before review](assets/images/002_operation-1-dataset-wide-cleanup/009_stage2-local-corrective-cleanup-auto-transform-before-review.png)
 
 *Figure: Auto Transform before review. This view shows the pre-operation comparison set selected for batch straightening prior to manual verification.*
