@@ -1,0 +1,157 @@
+{
+  "spike": "crop_auto_vs_upright_level",
+  "artifact": "crop_auto_vs_upright_level_comparison",
+  "status": "complete",
+  "generated_at_utc": "2026-09-30T23:34:24Z",
+  "summary": {
+    "compared_count": 18,
+    "missing_level_rotation_count": 2,
+    "median_absolute_difference_degrees": 0.4759,
+    "max_absolute_difference_degrees": 4.1123,
+    "within_threshold_counts": {
+      "0.1_degrees": 6,
+      "0.25_degrees": 7,
+      "0.5_degrees": 10,
+      "1.0_degrees": 12
+    },
+    "same_direction_count": 17,
+    "same_direction_eligible_count": 18
+  },
+  "inputs": {
+    "upright_level_probe": "outputs/lightroom_sdk/lightroom_sdk_upright_level_probe.json",
+    "crop_auto_angle_record": "outputs/lightroom_sdk/lightroom_sdk_crop_auto_angle_record.json",
+    "match_key": "asset_key"
+  },
+  "records": [
+    {
+      "asset_key": "JB105930",
+      "crop_auto_angle_degrees": 4.36,
+      "upright_level_predicted_angle_degrees": 0.2477,
+      "difference_degrees": -4.1123,
+      "absolute_difference_degrees": 4.1123
+    },
+    {
+      "asset_key": "JB105928",
+      "crop_auto_angle_degrees": 0.24,
+      "upright_level_predicted_angle_degrees": 2.674,
+      "difference_degrees": 2.434,
+      "absolute_difference_degrees": 2.434
+    },
+    {
+      "asset_key": "JB105931",
+      "crop_auto_angle_degrees": -0.33,
+      "upright_level_predicted_angle_degrees": -1.5069,
+      "difference_degrees": -1.1769,
+      "absolute_difference_degrees": 1.1769
+    },
+    {
+      "asset_key": "JB105924",
+      "crop_auto_angle_degrees": -0.27,
+      "upright_level_predicted_angle_degrees": -1.3979,
+      "difference_degrees": -1.1279,
+      "absolute_difference_degrees": 1.1279
+    },
+    {
+      "asset_key": "JB105905",
+      "crop_auto_angle_degrees": 1.15,
+      "upright_level_predicted_angle_degrees": 0.0775,
+      "difference_degrees": -1.0725,
+      "absolute_difference_degrees": 1.0725
+    },
+    {
+      "asset_key": "JB105903",
+      "crop_auto_angle_degrees": 1.85,
+      "upright_level_predicted_angle_degrees": 0.8064,
+      "difference_degrees": -1.0436,
+      "absolute_difference_degrees": 1.0436
+    },
+    {
+      "asset_key": "JB105909",
+      "crop_auto_angle_degrees": -1.31,
+      "upright_level_predicted_angle_degrees": -0.4393,
+      "difference_degrees": 0.8707,
+      "absolute_difference_degrees": 0.8707
+    },
+    {
+      "asset_key": "JB105915",
+      "crop_auto_angle_degrees": 0.51,
+      "upright_level_predicted_angle_degrees": 1.0363,
+      "difference_degrees": 0.5263,
+      "absolute_difference_degrees": 0.5263
+    },
+    {
+      "asset_key": "JB105927",
+      "crop_auto_angle_degrees": -0.33,
+      "upright_level_predicted_angle_degrees": 0.1461,
+      "difference_degrees": 0.4761,
+      "absolute_difference_degrees": 0.4761
+    },
+    {
+      "asset_key": "JB105904",
+      "crop_auto_angle_degrees": -0.12,
+      "upright_level_predicted_angle_degrees": -0.5957,
+      "difference_degrees": -0.4757,
+      "absolute_difference_degrees": 0.4757
+    },
+    {
+      "asset_key": "JB105929",
+      "crop_auto_angle_degrees": 0.13,
+      "upright_level_predicted_angle_degrees": 0.5132,
+      "difference_degrees": 0.3832,
+      "absolute_difference_degrees": 0.3832
+    },
+    {
+      "asset_key": "JB105902",
+      "crop_auto_angle_degrees": 0.56,
+      "upright_level_predicted_angle_degrees": 0.345,
+      "difference_degrees": -0.215,
+      "absolute_difference_degrees": 0.215
+    },
+    {
+      "asset_key": "JB105925",
+      "crop_auto_angle_degrees": -1.27,
+      "upright_level_predicted_angle_degrees": -1.3553,
+      "difference_degrees": -0.0853,
+      "absolute_difference_degrees": 0.0853
+    },
+    {
+      "asset_key": "JB105913",
+      "crop_auto_angle_degrees": 0.41,
+      "upright_level_predicted_angle_degrees": 0.3417,
+      "difference_degrees": -0.0683,
+      "absolute_difference_degrees": 0.0683
+    },
+    {
+      "asset_key": "JB105922",
+      "crop_auto_angle_degrees": -0.95,
+      "upright_level_predicted_angle_degrees": -1.0106,
+      "difference_degrees": -0.0606,
+      "absolute_difference_degrees": 0.0606
+    },
+    {
+      "asset_key": "JB105920",
+      "crop_auto_angle_degrees": -0.5,
+      "upright_level_predicted_angle_degrees": -0.5469,
+      "difference_degrees": -0.0469,
+      "absolute_difference_degrees": 0.0469
+    },
+    {
+      "asset_key": "JB105907",
+      "crop_auto_angle_degrees": 0.43,
+      "upright_level_predicted_angle_degrees": 0.3897,
+      "difference_degrees": -0.0403,
+      "absolute_difference_degrees": 0.0403
+    },
+    {
+      "asset_key": "JB105901",
+      "crop_auto_angle_degrees": -0.47,
+      "upright_level_predicted_angle_degrees": -0.4679,
+      "difference_degrees": 0.0021,
+      "absolute_difference_degrees": 0.0021
+    }
+  ],
+  "missing_level_rotation_asset_keys": [
+    "JB105911",
+    "JB105912"
+  ]
+}

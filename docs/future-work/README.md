@@ -37,3 +37,4 @@ Current future-work notes:
 - [Smart Conditioning For ML Compute Optimization](smart-conditioning-ml-compute-optimization.md)
 - [Personal Editing Style As Conditional Policy](personal-editing-style-conditional-policy.md)
 - [Lightroom Edit Recipe Execution Boundary](lightroom-edit-recipe-execution-boundary.md)
+- [Crop Auto vs Upright Level Spike](crop-auto-vs-upright-level-spike.md)

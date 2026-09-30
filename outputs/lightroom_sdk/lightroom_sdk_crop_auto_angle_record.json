@@ -1,0 +1,176 @@
+{
+  "spike": "crop_auto_vs_upright_level",
+  "artifact": "crop_auto_angle_record",
+  "status": "complete",
+  "generated_at_utc": "2026-09-30T23:21:34Z",
+  "summary": {
+    "selected_photo_count": 20
+  },
+  "notes": {
+    "method": "Reads CropAngle from getDevelopSettings() after the Crop tool's Auto button was applied per photo.",
+    "boundary": "Assumes Crop > Auto was the last crop edit on each selected photo; this plug-in does not apply it.",
+    "provenance": "Converted from the spike's first-run CSV output (2026-09-30); values unchanged."
+  },
+  "records": [
+    {
+      "asset_key": "JB105901",
+      "file_name": "JB105901.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "ADA46D1E-4F39-4841-9EEB-76A65465262F",
+      "crop_angle_degrees": -0.47,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105902",
+      "file_name": "JB105902.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "23F3D2D4-A04E-4925-B957-1BC25DE40B63",
+      "crop_angle_degrees": 0.56,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105903",
+      "file_name": "JB105903.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "440ED5B8-102C-4130-B006-9414773486A7",
+      "crop_angle_degrees": 1.85,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105904",
+      "file_name": "JB105904.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "9C62FC22-449A-41A6-ADD3-45161E8D9AEF",
+      "crop_angle_degrees": -0.12,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105905",
+      "file_name": "JB105905.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "E81745E6-0CFD-48FB-8C3E-0FE1AF50938B",
+      "crop_angle_degrees": 1.15,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105907",
+      "file_name": "JB105907.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "9AAD6D25-668B-483D-A22F-E6EAAB36BC56",
+      "crop_angle_degrees": 0.43,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105909",
+      "file_name": "JB105909.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "A6A16F03-E3E0-4F91-A16F-7759EAB93335",
+      "crop_angle_degrees": -1.31,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105911",
+      "file_name": "JB105911.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "98B96597-7193-47F8-A670-856B2B5F849A",
+      "crop_angle_degrees": 0.28,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105912",
+      "file_name": "JB105912.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "7A4498ED-2EE7-47C0-8C89-4491C625D64E",
+      "crop_angle_degrees": 0.45,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105913",
+      "file_name": "JB105913.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "E44127DD-C2B8-4DB7-85B3-D7F5D443ABD4",
+      "crop_angle_degrees": 0.41,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105915",
+      "file_name": "JB105915.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "80E33AD0-2102-4380-8963-730E88EAC335",
+      "crop_angle_degrees": 0.51,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105920",
+      "file_name": "JB105920.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "48ED708B-8ED0-4E71-BD60-8F386780B0F3",
+      "crop_angle_degrees": -0.5,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105922",
+      "file_name": "JB105922.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "99CFB6DA-83C5-4B50-8837-35F94E75F79E",
+      "crop_angle_degrees": -0.95,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105924",
+      "file_name": "JB105924.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "F08CF308-D1E5-4C4F-AD9F-0D0CD521011F",
+      "crop_angle_degrees": -0.27,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105925",
+      "file_name": "JB105925.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "6480589A-5566-427C-8073-1408CF916E9A",
+      "crop_angle_degrees": -1.27,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105927",
+      "file_name": "JB105927.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "F1CA4744-E4C8-49F9-AD05-A05EBBDF4486",
+      "crop_angle_degrees": -0.33,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105928",
+      "file_name": "JB105928.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "6369E522-B081-4B20-B524-CE16E0D4BEBB",
+      "crop_angle_degrees": 0.24,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105929",
+      "file_name": "JB105929.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "060DA76A-6926-4BA3-9A5B-DDCBF87CAA67",
+      "crop_angle_degrees": 0.13,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105930",
+      "file_name": "JB105930.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "61C68225-8023-4D45-BD0F-B5857AA2FD29",
+      "crop_angle_degrees": 4.36,
+      "perspective_upright": 0
+    },
+    {
+      "asset_key": "JB105931",
+      "file_name": "JB105931.JPG",
+      "copy_name": "Copy 2",
+      "uuid": "29767A49-3D75-475B-B6D7-EDA695F6F642",
+      "crop_angle_degrees": -0.33,
+      "perspective_upright": 0
+    }
+  ]
+}
