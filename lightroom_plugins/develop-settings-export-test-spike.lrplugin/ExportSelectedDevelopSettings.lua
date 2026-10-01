@@ -101,7 +101,7 @@ end
 
 
 -- Repo-relative paths for the artifact; absolute paths would expose the local home folder.
-local RELATIVE_PLUGIN_PATH = "lightroom_plugins/develop-settings-spike.lrplugin"
+local RELATIVE_PLUGIN_PATH = "lightroom_plugins/develop-settings-export-test-spike.lrplugin"
 local RELATIVE_OUTPUT_PATH = "outputs/lightroom_sdk/lightroom_sdk_selected_develop_settings_export.json"
 
 

@@ -1,4 +1,4 @@
-# Develop Settings SDK Spike
+# Develop Settings Export Test Spike
 
 This Lightroom Classic plug-in is a proof-of-capability spike for reading
 Develop settings through the Lightroom SDK.
@@ -25,7 +25,7 @@ In Lightroom Classic:
 3. Select this folder:
 
 ```text
-lightroom_plugins/develop-settings-spike.lrplugin
+lightroom_plugins/develop-settings-export-test-spike.lrplugin
 ```
 
 Do not copy the plug-in folder elsewhere for this spike. The export path

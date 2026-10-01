@@ -2,7 +2,7 @@
   "generated_at_utc": "2026-10-01T03:06:24Z",
   "lightroom_sdk_context": {
     "output_path": "outputs/lightroom_sdk/lightroom_sdk_selected_develop_settings_export.json",
-    "plugin_path": "lightroom_plugins/develop-settings-spike.lrplugin"
+    "plugin_path": "lightroom_plugins/develop-settings-export-test-spike.lrplugin"
   },
   "notes": {
     "boundary": "This artifact is written by Lightroom through the SDK. Compare it with XMP-derived Python extracts to verify whether the SDK exposes the same Develop state this repository observes externally.",
