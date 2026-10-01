@@ -32,6 +32,10 @@ stage4/
 
 lightroom_sdk/
   exploratory Lightroom SDK export artifacts
+  lightroom_sdk_crop_auto_angle_record.json,
+  lightroom_sdk_upright_level_probe.json, and
+  lightroom_sdk_crop_auto_vs_upright_level_comparison.json
+  for the Crop Auto vs Upright Level straightening spike
 ```
 
 Stage-specific ordering notes live in:
