@@ -49,6 +49,11 @@ This spike only reads Develop settings. It does not apply edits, create
 masks, modify XMP sidecars, or claim that Lightroom AI masking is
 scriptable.
 
+Records identify each photo by `asset_key`, `file_name`, `copy_name`,
+and `uuid`. The artifact stores repo-relative paths only: source file
+paths are not written because they expose local volume and client
+folder names in a public repository.
+
 The next comparison step is to run the repository's Python XMP extractor
 against the same selected asset(s) and check whether the SDK-exposed
 Develop state matches the sidecar-derived state.
