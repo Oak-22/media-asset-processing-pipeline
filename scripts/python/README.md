@@ -84,7 +84,10 @@ scripts/python/
 │   ├── 01_build_checkpoint_manifest.py
 │   ├── 02_extract_develop_settings.py
 │   ├── 03_audit_stage2_parameters.py
-│   └── 04_build_stage2_manifest.py
+│   ├── 04_build_stage2_manifest.py
+│   └── spikes/
+│       ├── __init__.py
+│       └── compare_crop_auto_vs_upright_level.py
 ├── stage3/
 │   ├── __init__.py
 │   ├── 01_extract_mask_state.py
@@ -103,6 +106,10 @@ scripts/python/
     ├── __init__.py
     ├── 01_build_serving_exports.py
     └── 02_build_stage5_manifest.py
+
+scripts/macos/
+└── stage2/
+    └── run_crop_auto_straighten.sh
 ```
 
 <br>
@@ -116,11 +123,15 @@ scripts/python/
 - `stage1/`: metadata extraction, validation, and manifest generation
 - `stage2/`: develop-setting extraction, parameter auditing, and
   manifest generation
+- `stage2/spikes/`: proof-of-capability spike comparison of Crop Auto
+  straighten angles against Upright Level predictions
 - `stage3/`: review-sheet creation, review-result ingestion, and
   manifest generation
 - `stage4/`: RAW pixel-signal extraction, feature inventory, dataset
   readiness, ML handoff contract, and manifest generation
 - `stage5/`: operational serving exports and manifest generation
+- `../macos/stage2/run_crop_auto_straighten.sh`: GUI automation for
+  Stage 2 Operation 1B Crop Auto straightening
 
 These files are CLI entrypoints for producing and validating the
 machine-readable evidence, handoff contracts, and serving exports that
