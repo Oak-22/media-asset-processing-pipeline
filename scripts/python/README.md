@@ -87,7 +87,11 @@ scripts/python/
 │   ├── 04_build_stage2_manifest.py
 │   └── spikes/
 │       ├── __init__.py
-│       └── compare_crop_auto_vs_upright_level.py
+│       ├── build_edit_transfer_hash_manifest.py
+│       ├── calibrate_edit_transfer_pilot.py
+│       ├── compare_crop_auto_vs_upright_level.py
+│       ├── edit_transfer_metrics.py
+│       └── requirements.txt
 ├── stage3/
 │   ├── __init__.py
 │   ├── 01_extract_mask_state.py
@@ -124,7 +128,10 @@ scripts/macos/
 - `stage2/`: develop-setting extraction, parameter auditing, and
   manifest generation
 - `stage2/spikes/`: proof-of-capability spike comparison of Crop Auto
-  straighten angles against Upright Level predictions
+  straighten angles against Upright Level predictions, and the JPEG-to-RAW
+  edit-transfer pilot scorer (render metrics, ΔE2000, alignment, WB and
+  noise calibration, hash manifests for the untouched masters); the
+  pilot scorer needs `numpy` and `tifffile` from `requirements.txt`
 - `stage3/`: review-sheet creation, review-result ingestion, and
   manifest generation
 - `stage4/`: RAW pixel-signal extraction, feature inventory, dataset
