@@ -4,8 +4,8 @@ return {
   LrSdkVersion = 6.0,
   LrSdkMinimumVersion = 6.0,
 
-  LrToolkitIdentifier = "com.julianbuccat.media-asset-pipeline.develop-settings-spike",
-  LrPluginName = "Media Asset Pipeline - Develop Settings Spike",
+  LrToolkitIdentifier = "com.julianbuccat.media-asset-pipeline.develop-settings-export-test-spike",
+  LrPluginName = "Media Asset Pipeline - Develop Settings Export Test Spike",
   LrPluginInfoUrl = "https://github.com/Oak-22/media-asset-processing-pipeline",
 
   LrLibraryMenuItems = {

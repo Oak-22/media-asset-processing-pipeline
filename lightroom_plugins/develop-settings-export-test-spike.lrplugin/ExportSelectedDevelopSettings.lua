@@ -100,6 +100,11 @@ local function jsonEncode(value, indentLevel)
 end
 
 
+-- Repo-relative paths for the artifact; absolute paths would expose the local home folder.
+local RELATIVE_PLUGIN_PATH = "lightroom_plugins/develop-settings-export-test-spike.lrplugin"
+local RELATIVE_OUTPUT_PATH = "outputs/lightroom_sdk/lightroom_sdk_selected_develop_settings_export.json"
+
+
 local function repoRoot()
   local pluginRoot = _PLUGIN.path
   return LrPathUtils.parent(LrPathUtils.parent(pluginRoot))
@@ -128,19 +133,28 @@ local function safeRawMetadata(photo, key)
 end
 
 
-local function buildPhotoRecord(photo)
-  local path = safeRawMetadata(photo, "path")
-  local fileName = safeRawMetadata(photo, "fileName")
-  if fileName == nil and path ~= nil then
-    fileName = LrPathUtils.leafName(path)
+-- fileName and copyName are formatted metadata; getRawMetadata returns nil for them.
+local function safeFormattedMetadata(photo, key)
+  local ok, value = LrTasks.pcall(function()
+    return photo:getFormattedMetadata(key)
+  end)
+  if ok and value ~= "" then
+    return value
   end
+  return nil
+end
+
+
+-- The source file path is deliberately not recorded: it exposes local volume
+-- and client folder names, and file_name / asset_key already identify the asset.
+local function buildPhotoRecord(photo)
+  local fileName = safeFormattedMetadata(photo, "fileName")
 
   return {
     photo_metadata = {
       asset_key = fileName and LrPathUtils.removeExtension(fileName) or nil,
       file_name = fileName,
-      path = path,
-      copy_name = safeRawMetadata(photo, "copyName"),
+      copy_name = safeFormattedMetadata(photo, "copyName"),
       uuid = safeRawMetadata(photo, "uuid"),
       capture_time = safeRawMetadata(photo, "dateTimeOriginal"),
     },
@@ -203,9 +217,8 @@ local function exportSelectedDevelopSettings()
       boundary = "This artifact is written by Lightroom through the SDK. Compare it with XMP-derived Python extracts to verify whether the SDK exposes the same Develop state this repository observes externally.",
     },
     lightroom_sdk_context = {
-      plugin_path = _PLUGIN.path,
-      repo_root = repoRoot(),
-      output_path = exportPath,
+      plugin_path = RELATIVE_PLUGIN_PATH,
+      output_path = RELATIVE_OUTPUT_PATH,
     },
     records = records,
   }
@@ -213,7 +226,7 @@ local function exportSelectedDevelopSettings()
   writeText(exportPath, jsonEncode(payload, 0))
   LrDialogs.message(
     "Develop settings exported",
-    "Wrote " .. tostring(#records) .. " selected photo record(s) to:\n\n" .. exportPath,
+    "Wrote " .. tostring(#records) .. " selected photo record(s) to:\n\n" .. RELATIVE_OUTPUT_PATH,
     "info"
   )
 end

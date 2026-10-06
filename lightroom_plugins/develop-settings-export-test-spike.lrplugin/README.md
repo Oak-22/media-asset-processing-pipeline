@@ -1,4 +1,4 @@
-# Develop Settings SDK Spike
+# Develop Settings Export Test Spike
 
 This Lightroom Classic plug-in is a proof-of-capability spike for reading
 Develop settings through the Lightroom SDK.
@@ -25,7 +25,7 @@ In Lightroom Classic:
 3. Select this folder:
 
 ```text
-lightroom_plugins/develop-settings-spike.lrplugin
+lightroom_plugins/develop-settings-export-test-spike.lrplugin
 ```
 
 Do not copy the plug-in folder elsewhere for this spike. The export path
@@ -48,6 +48,11 @@ outputs/lightroom_sdk/lightroom_sdk_selected_develop_settings_export.json
 This spike only reads Develop settings. It does not apply edits, create
 masks, modify XMP sidecars, or claim that Lightroom AI masking is
 scriptable.
+
+Records identify each photo by `asset_key`, `file_name`, `copy_name`,
+and `uuid`. The artifact stores repo-relative paths only: source file
+paths are not written because they expose local volume and client
+folder names in a public repository.
 
 The next comparison step is to run the repository's Python XMP extractor
 against the same selected asset(s) and check whether the SDK-exposed
