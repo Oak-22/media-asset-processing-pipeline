@@ -38,3 +38,4 @@ Current future-work notes:
 - [Personal Editing Style As Conditional Policy](personal-editing-style-conditional-policy.md)
 - [Lightroom Edit Recipe Execution Boundary](lightroom-edit-recipe-execution-boundary.md)
 - [Crop Auto vs Upright Level Spike](crop-auto-vs-upright-level-spike.md)
+- [JPEG to RAW Edit Transfer Spike](jpeg-to-raw-edit-transfer-spike.md)
